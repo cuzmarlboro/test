@@ -1,0 +1,265 @@
+.relationship {
+  padding-top: 38px;
+
+  &-title {
+    font-weight: 600;
+    font-size: 40px;
+    color: #333333;
+    line-height: 62px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__btn {
+      height: 64px;
+      background: #ffffff;
+      border-radius: 16px;
+      border: 2px solid #f1f1f1;
+      padding: 0 22px;
+
+      font-weight: 600;
+      font-size: 28px;
+      color: #c4dac6;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &-select {
+    padding-top: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__box {
+      width: 216px;
+      height: 136px;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px 0 14px;
+      background: #65d0a9;
+      border-radius: 16px;
+    }
+
+    &__title {
+      font-family: Gilroy;
+      font-weight: 800;
+      font-size: 48px;
+      color: #ffffff;
+      line-height: 58px;
+    }
+
+    &__sub {
+      padding-top: 4px;
+      font-weight: 600;
+      font-size: 28px;
+      color: #ffffff;
+      line-height: 40px;
+    }
+
+    &__center {
+      font-family: Gilroy;
+      font-weight: 800;
+      font-size: 64px;
+      color: #65d0a9;
+      line-height: 78px;
+      margin: 0 38px;
+    }
+
+    &__add {
+      width: 216px;
+      height: 136px;
+    }
+  }
+
+  .history {
+    padding-top: 94px;
+
+    &-title {
+      padding: 0 56px 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__txt {
+        font-weight: 600;
+        font-size: 36px;
+        color: #333333;
+        line-height: 50px;
+        flex-shrink: 0;
+      }
+
+      &__right {
+        display: flex;
+        align-items: center;
+      }
+
+      &__tips {
+        width: 40px;
+        height: 40px;
+        display: block;
+        flex-shrink: 0;
+        margin-right: 8px;
+      }
+
+      &__circle {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-left: 8px;
+      }
+    }
+
+    &-list {
+      padding: 32px;
+
+      &__empty {
+        padding-top: 60px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 24px;
+        color: #999999;
+        line-height: 56px;
+      }
+    }
+
+    &-item {
+      padding: 0 42px 0 32px;
+      margin-bottom: 40px;
+      min-height: 202px;
+      background: #ffffff;
+      border-radius: 16px 16px 16px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__left {
+        flex: 1;
+      }
+
+      &__title {
+        font-family: Gilroy;
+        font-weight: 800;
+        font-size: 36px;
+        color: #333333;
+        line-height: 44px;
+        padding-bottom: 16px;
+
+        &_green {
+          color: #65d0a9;
+        }
+      }
+
+      &__detail {
+        font-weight: 400;
+        font-size: 28px;
+        color: #333333;
+        line-height: 40px;
+      }
+
+      &__right {
+        width: 64px;
+        height: 64px;
+        background: #65d0a9;
+        border-radius: 50%;
+
+        flex-shrink: 0;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .tips {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+
+    &-content {
+      width: 648px;
+      height: 942px;
+      padding: 40px 54px;
+
+      background: #ffffff;
+      border-radius: 16px;
+      box-sizing: border-box;
+
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 28px;
+      color: #65d0a9;
+      line-height: 56px;
+      text-align: center;
+    }
+
+    &-main {
+      &__item {
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &_txt {
+          font-weight: 600;
+          font-size: 28px;
+          color: #333333;
+          line-height: 56px;
+          flex: 1;
+        }
+
+        &_circle {
+          width: 64px;
+          height: 64px;
+          flex-shrink: 0;
+          margin-left: 20px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &-footer {
+      padding-top: 70px;
+
+      font-weight: 400;
+      font-size: 28px;
+      color: #999999;
+      line-height: 56px;
+
+      &__green {
+        color: #65d0a9;
+      }
+    }
+  }
+
+  .tips-old {
+    .tips-content {
+      padding: 40px 24px 50px;
+    }
+
+    .tips-img {
+      margin-top: 40px;
+      width: 600px;
+      height: 532px;
+      display: block;
+    }
+
+    .tips-footer {
+      padding: 56px 26px 0;
+    }
+  }
+}

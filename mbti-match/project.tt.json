@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "character_mbti",
+  "appid": "testAppId",
+  "setting": {
+    "es6": false,
+    "minified": false
+  }
+}

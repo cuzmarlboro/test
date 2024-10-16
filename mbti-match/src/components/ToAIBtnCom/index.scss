@@ -1,0 +1,17 @@
+.toAIBtnCom {
+    width: 100%;
+    padding: 20px 32px;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+
+    .toAIBtnCom_content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,120 @@
+.page-write {
+  padding: 128px 64px 0;
+
+  &__explain {
+
+    .select-item__act,
+    .btn-act {
+      background: #785e88 !important;
+    }
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 40px;
+    color: #3d3d3d;
+    line-height: 24px;
+  }
+
+  .select {
+    $width: 120px;
+
+    padding-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(4, $width);
+    grid-column-gap: calc((100% - $width * 4) / 3);
+
+    &-item {
+      width: $width;
+      height: 120px;
+      background: #dddddd;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: Times New Roman, Times New Roman;
+      font-weight: 700;
+      font-size: 64px;
+      color: #b9b9b9;
+      line-height: 74px;
+
+      &__act {
+        background: #65d0a9;
+
+        color: #ffffff;
+      }
+    }
+
+    .select-item:not(:nth-of-type(4n - 3)) {
+      margin-right: 40px;
+    }
+
+    .select-item+.select-item {
+      margin-top: 24px;
+    }
+  }
+
+  .adv {
+    background: #ffffff;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 32px 20px 24px;
+    box-sizing: border-box;
+    margin-top: 64px;
+
+    &-left {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+
+    &-logo {
+      width: 64px;
+      height: 64px;
+      display: block;
+    }
+
+    &-txt {
+      font-weight: 500;
+      font-size: 32px;
+      color: #3d3d3d;
+      line-height: 24px;
+      padding-left: 16px;
+    }
+
+    &-right {
+      width: 32px;
+      height: 32px;
+      display: block;
+      flex-shrink: 0;
+    }
+  }
+
+  .btn {
+    width: 656px;
+    height: 120px;
+    background: #dddddd;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 500;
+    font-size: 36px;
+    color: #ffffff;
+
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 104px;
+    margin: 0 auto;
+
+    &-act {
+      background: #65d0a9;
+      color: #ffffff;
+    }
+  }
+}
