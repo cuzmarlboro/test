@@ -2,7 +2,7 @@
  * @Author: 何泽颖 hezeying@autowise.ai
  * @Date: 2024-07-26 19:15:55
  * @LastEditors: 何泽颖 hezeying@autowise.ai
- * @LastEditTime: 2024-09-30 16:01:13
+ * @LastEditTime: 2024-10-24 00:55:50
  * @FilePath: /mbti-match/src/hooks/useToNativeRoute.js
  * @Description: 跳转原生页面
  *
@@ -48,8 +48,8 @@ const CHAT_PUBLICPATH_MAP = new Map([
 
 const CHAT_PAGE_MAP = new Map([
   ['ios', '/pages/chat/index'],
-  ['android', '/pages/chat/index'],
-  ['ios-test', '/pages/chat2/index'],
+  ['android', '/pages/chat2/index'],
+  ['ios-test', '/pages/chat/index'],
   ['android-test', '/pages/chat2/index']
 ]);
 
@@ -58,6 +58,8 @@ const useToNativeRoute = () => {
   const tokenStorage = useAtomValue(tokenStorageAtom);
 
   return (title, mbti, sourceUrl = '') => {
+    console.log(CHAT_PAGE_MAP.get(process.env.TARO_APP_ENV));
+
     let url = '';
     switch (title) {
       case '荣格八维流派':
@@ -122,6 +124,7 @@ const useToNativeRoute = () => {
       let isAddCommonParameter = true;
       if (title === BUYPRO) url = '/membership/Membership';
       if (title === AI) {
+        title = '';
         bottomCompose = 'input';
         isAddCommonParameter = false;
       }
