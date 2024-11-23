@@ -61,7 +61,7 @@ export default function Detail() {
 
   return (
     <View className='page-detail'>
-      <ToAIBtnCom themeColor='#65d0a9' />
+      {/* <ToAIBtnCom themeColor='#65d0a9' /> */}
 
       <View className='box mt-0'>
         <View className='box-title'>关系简介</View>

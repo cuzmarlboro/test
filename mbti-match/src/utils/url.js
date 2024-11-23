@@ -2,7 +2,7 @@
  * @Author: 何泽颖 hezeying@autowise.ai
  * @Date: 2024-07-18 16:52:58
  * @LastEditors: 何泽颖 hezeying@autowise.ai
- * @LastEditTime: 2024-09-22 03:20:16
+ * @LastEditTime: 2024-10-24 10:49:29
  * @FilePath: /mbti-match/src/utils/url.js
  * @Description:
  *

@@ -151,7 +151,7 @@ export default function Explain({ isShow, mbti: propsMbti }) {
         <Image className='explain-top__icon' src={downImg} />
       </View>
 
-      {mbti !== 'XXXX' && <ToAIBtnCom themeColor='#65d0a9' mbti={mbti} />}
+      {/* {mbti !== 'XXXX' && <ToAIBtnCom themeColor='#65d0a9' mbti={mbti} />} */}
 
       <View className='explain-animation'>
         <View className='explain-animation__eight'>

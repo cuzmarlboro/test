@@ -2,7 +2,7 @@
  * @Author: 何泽颖 hezeying@autowise.ai
  * @Date: 2024-07-26 19:15:55
  * @LastEditors: 何泽颖 hezeying@autowise.ai
- * @LastEditTime: 2024-10-24 00:55:50
+ * @LastEditTime: 2024-10-24 10:42:22
  * @FilePath: /mbti-match/src/hooks/useToNativeRoute.js
  * @Description: 跳转原生页面
  *
@@ -124,7 +124,7 @@ const useToNativeRoute = () => {
       let isAddCommonParameter = true;
       if (title === BUYPRO) url = '/membership/Membership';
       if (title === AI) {
-        title = '';
+        title = '知识库问答';
         bottomCompose = 'input';
         isAddCommonParameter = false;
       }
