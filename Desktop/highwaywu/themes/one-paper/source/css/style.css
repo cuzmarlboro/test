@@ -1,0 +1,810 @@
+@charset "utf-8";
+
+:root
+{
+    --font-color-0: #04077e;
+    --font-color-1: #000;
+    --font-color-2: #666;
+    --font-color-3: #aaa;
+    --bg-color-1: #eee;
+    --line-1: #ccc;
+    --line-2: #ddd;
+    --webkit-backface-visibility: hidden !important;
+}
+p
+{
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+body
+{
+    font-family: "Montserrat", "SF UI Text", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", "Helvetica Neue", Helvetica, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    letter-spacing: 0.6px;
+    color: var(--font-color-2);
+    background: #111;
+}
+a
+{
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--font-color-1);
+}
+
+.paper
+{
+    padding: 3vw;
+}
+.paper-main
+{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 8% 24px;
+    background: #fff;
+    border-radius: 24px;
+    background: #fff;
+    padding-top: 140px;
+}
+
+.header
+{
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line-1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+.logo
+{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--font-color-1);
+    margin-bottom: 16px;
+    flex: 0 0 100%;
+}
+.nav
+{
+    margin: 0 0 4px;
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+.nav li
+{
+    margin-right: 8px;
+}
+.nav li:last-of-type
+{
+    margin-right: 0;
+}
+.nav li a
+{
+    color: #999;
+    opacity: .6;
+    transition: opacity ease-in-out .5s;
+    padding-top: 2px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 2px;
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+}
+.nav li a:hover
+{
+    opacity: 1;
+    transition: opacity ease-in-out .5s;
+}
+
+.post-header
+{
+    margin-bottom: 48px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+.post-header .logo
+{
+    font-size: 1rem;
+}
+.post-header .go-home
+{
+    display: block;
+    padding: 10px 20px 8px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid #eee;
+    margin: 8px 0;
+    transition: background ease-in-out .5s;
+}
+.post-header .go-home:hover
+{
+    background: var(--bg-color-1);
+    transition: background ease-in-out .5s;
+}
+.post-header .go-home svg
+{
+    transform: translateX(0);
+    transition: transform ease-in-out .5s;
+}
+.post-header .go-home:hover svg
+{
+    transform: translateX(-4px);
+    transition: transform ease-in-out .5s;
+}
+
+.post-list
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.post
+{
+    width: 100%;
+    padding-bottom: 48px;
+    margin-bottom: 48px;
+    border-bottom: 1px dashed var(--line-2);
+}
+.post-title
+{
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: var(--font-color-1);
+    /*transition: color ease-in-out .5s;*/
+}
+.post-title:hover
+{
+    color: var(--font-color-0);
+    transition: color ease-in-out .5s;
+}
+.post-except
+{
+    word-break: break-all;
+    margin-bottom: 12px;
+}
+.read-more
+{
+    padding: 0 4px;
+    color: var(--font-color-0);   
+}
+.read-more:before,
+.read-more:after
+{
+    display: inline-block;
+    transition: transform ease-in-out .5s;
+}
+.read-more:before
+{
+    content: "{ ";
+}
+.read-more:after
+{
+    content: " }";
+}
+.read-more:hover:before
+{
+    transform: translateX(-4px);
+    transition: transform ease-in-out .25s;
+}
+.read-more:hover:after
+{
+    transform: translateX(4px);
+    transition: transform ease-in-out .25s;
+}
+.post-date
+{
+    font-size: 0.875rem;
+    color: var(--font-color-3);
+}
+
+.paginator
+{
+    font-size: 0.875rem;
+    width: 100%;
+    margin: 0 auto 24px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.paginator *
+{
+    display: block;
+    padding: 8px 16px;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid #eee;
+}
+.paginator .space
+{
+    display: block;
+    padding: 8px 16px;
+    border-radius: 18px;
+    background: #fff;
+    border: none;
+}
+.paginator a
+{
+    margin: 4px;
+    color: var(--font-color-2);
+    transition: color ease-in-out .5s;
+}
+.paginator a:hover
+{
+    color: var(--font-color-0);
+    transition: color ease-in-out .5s;
+}
+.paginator .current
+{
+    color: var(--font-color-0);
+    border: 1px solid var(--font-color-0);
+}
+
+.footer
+{
+    padding: 24px 0;
+    font-size: 0.875rem;
+    color: var(--font-color-3);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+}
+.footer span
+{
+    text-align: center;
+    margin-bottom: 8px;
+}
+.footer a
+{
+    color: var(--font-color-3);
+    transition: color ease-in-out .5s;
+}
+.footer a:hover
+{
+    color: var(--font-color-0);
+    transition: color ease-in-out .5s;
+}
+
+.post-main
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.post-main-title
+{
+    flex: 0 0 100%;
+    margin-bottom: 12px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--font-color-1);
+}
+.post-meta
+{
+    font-size: 0.875rem;
+    color: var(--font-color-3);
+    flex: 0 0 100%;
+    margin-bottom: 32px;
+}
+
+.archive
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: normal;
+}
+.archive li
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    padding: 12px 0;
+}
+.archive li:nth-child(odd)
+{
+    background: #fafafa;
+}
+.archive li:nth-child(even)
+{
+    background: #fff;
+}
+.archive li span
+{
+    width: 108px;
+    color: var(--font-color-2);
+}
+.archive-main
+{
+    flex: 0 1 calc( 100% - 108px );
+}
+.archive-title
+{
+    color: var(--font-color-1);
+    /*transition: color ease-in-out .5s;*/
+}
+.archive-title:hover
+{
+    color: var(--font-color-0);
+    transition: color ease-in-out .5s;
+}
+
+/* 当路径包含 yinian 时的样式 */
+.yinian .paper-main {
+    min-height: 800px;
+}
+
+.thoughts-container{
+    min-height: 800px !important;
+    background-color: #F9F9F9 !important;
+}
+
+/* 引用块样式 */
+blockquote {
+    background-color: #F9F9F9;
+    padding: 15px 20px;
+    margin: 0 0 20px;
+    border-left: 4px solid #eee;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+/* thoughts 页面的引用块样式 */
+.thoughts-abstract {
+    background-color: #F9F9F9;
+    padding: 15px 20px;
+    margin: 0 0 20px;
+    border-left: 4px solid #eee;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.thoughts-abstract p {
+    margin: 0;
+}
+
+/* .thought-content {
+    background-color: #F9F9F9;
+    padding: 15px 20px;
+    margin: 0 0 20px;
+    border-radius: 4px;
+}
+
+.thought-content p {
+    margin: 15px 0;
+}
+
+.thought-content p:first-child {
+    margin-top: 0;
+}
+
+.thought-content p:last-child {
+    margin-bottom: 0;
+} */
+
+
+.thought-item{
+    font-weight: normal;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    padding-top:6px;
+padding-right:15px;
+padding-bottom:6px;
+padding-left:15px;
+    margin-bottom: 18px;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.thought-random {
+    background-color: #f8f8f8;
+    border-radius: 6px;
+    padding: 20px;
+    height: 120px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-bottom: 12px;
+}
+
+.thought-random svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    stroke: #ccc;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.thought-random svg rect {
+    fill: none; 
+    stroke: #ccc;
+    width: 99.3%;
+    height: 98%;
+    stroke-width: 1;
+    stroke-dasharray: 10 10;
+    rx: 6px;
+    ry: 6px;
+}
+
+/* hover效果 */
+.thought-random:hover {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+    background-color: #f8f8f8;
+}
+
+/* 点击效果 */
+.thought-random:active {
+    transform: translateY(0) scale(0.99);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f2f2f2;
+    transition: all 0.1s ease-in-out;
+}
+
+/* hover时虚线效果 */
+.thought-random:hover svg rect {
+    stroke: #ccc;
+    /* stroke-dasharray: 15 15; */
+    /* stroke-width: 2.5; */
+}
+
+/* active时虚线效果 */
+.thought-random:active svg rect {
+    stroke: #ccc;
+    /* stroke-dasharray: 12 12; */
+    /* stroke-width: 2; */
+}
+
+/* 弹窗遮罩层 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.2);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+/* 弹窗内容 */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+
+/* 弹窗显示时的动画效果 */
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* 关闭按钮 */
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.modal-close:hover {
+    color: #666;
+    background-color: #f5f5f5;
+}
+
+/* 随机内容样式 */
+.random-thought {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin: 10px 0;
+}
+
+.random-thought p {
+    position: relative;
+    margin: 0.5em 0;
+}
+
+/* 移除原来的标样式 */
+.random-thought p:last-child::after {
+    content: none;
+}
+
+/* 新的光标样式，只显示在正在打字的段落 */
+.random-thought p.active-typing::after {
+    content: '|';
+    position: relative;
+    margin-left: 2px;
+    animation: blink 0.87s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+
+
+.thoughts-abstract {
+    font-family: ChineseMono;
+    font-weight: normal;
+    border-left: 4px solid #ddd;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+  }
+ .thoughts-abstract p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+
+  .thought {
+    font-weight: normal;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+   .thought .thought-content {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .thought .thought-timestamp {
+    font-size: 14px;
+    color: #7e7a7a;
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+  }
+
+  @media (max-width: 768px) {
+     .article-inner {
+      padding: 0px;
+    }
+    s .thought {
+      padding: 10px;
+    }
+     .thought .thought-content {
+      font-size: 16px;
+    }
+     .thought .thought-timestamp {
+      font-size: 12px;
+    }
+  }
+
+  .thoughts-abstract p {
+    margin: 0;
+    line-height: 1.6;
+  }
+
+
+  .container{
+    min-width: 800px;
+  }
+
+.nav li.active {
+    font-weight: 900;
+    background-color: #333;
+    border-radius: 100px;
+}
+
+.nav li.active a {
+    color: #fff;
+    opacity: 1;
+}
+
+.nav-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* 为iOS添加平滑滚动 */
+    scrollbar-width: none; /* 隐藏Firefox滚动条 */
+}
+
+.nav-wrapper::-webkit-scrollbar {
+    display: none; /* 隐藏Chrome滚动条 */
+}
+
+.nav {
+    display: flex;
+    flex-wrap: nowrap; /* 防止换行 */
+    white-space: nowrap; /* 防止文本换行 */
+}
+
+.menu-item {
+    flex: 0 0 auto; /* 防止项目被压缩 */
+}
+
+/* 在小屏幕上应用这些样式 */
+@media screen and (max-width: 768px) {
+    .nav-wrapper {
+        margin: 0 -15px; /* 可选：增加容器宽度 */
+        padding: 0 15px;
+    }
+}
+
+/* 添加固定导航栏样式 */
+.fixed-nav {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 4px;
+    border-radius: 0px;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+    visibility: hidden;
+    width: calc(100% - 16%); /* 减去 paper-main 的左右 padding (8% * 2) */
+    max-width: 1200px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.fixed-nav .nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 2px;
+}
+
+.fixed-nav .nav li {
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* 电脑端默认字号 */
+    white-space: nowrap;
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+}
+
+.fixed-nav .nav li a {
+    font-size: 14px; /* 电脑端字号 */
+    padding: 4px 4px;
+    display: block;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+.fixed-nav.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 移除所有特殊的媒体查询处理，保持居中效果一致 */
+@media screen and (max-width: 768px) {
+    .fixed-nav .nav li {
+        font-size: 14px; /* 手机端字号 */
+    }
+}
+
+/* 增加选择器优先级 */
+.fixed-nav .nav li.menu-item a {
+    font-size: 16px !important;
+    padding: 4px 4px;
+    display: block;
+    overflow: visible;
+    text-overflow: clip;
+}
+
+@media screen and (max-width: 768px) {
+    .fixed-nav,
+    .fixed-nav .nav,
+    .fixed-nav .nav li,
+    .fixed-nav .nav li a {
+        font-size: 13px !important; /* 手机端基础字体大小 */
+    }
+    
+    .fixed-nav .nav li.menu-item a {
+        font-size: 13px !important; /* 确保菜单项字体大小一致 */
+    }
+}
+
+/* 手机端特别处理链接字号 */
+@media screen and (max-width: 768px) {
+    .fixed-nav .nav li a {
+        font-size: 12px; /* 手机端字号 */
+    }
+}
+
+/* 确保其他样式不会覆盖字体大小 */
+.fixed-nav * {
+    font-size: unset;
+}
+
+/* 基础链接样式 - 默认14px */
+a {
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--font-color-1);
+}
+
+/* 只在电脑端调整宽度 */
+@media screen and (min-width: 769px) {
+    .fixed-nav {
+        width: 84%; /* 保持与内容区域相同的宽度比例 */
+    }
+}
+
+/* 针对窄屏幕的媒体查询 */
+@media screen and (max-width: 768px) {
+    .fixed-nav {
+        width: calc(100% - 6vw); /* 在窄屏下使用固定的 padding 值 */
+    }
+    
+    .paper-main {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

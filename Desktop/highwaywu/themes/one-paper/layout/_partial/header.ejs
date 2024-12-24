@@ -1,0 +1,31 @@
+<div class="header">
+    <a class="logo" href="<%- url_for() %>"><%= config.title %></a>
+    <div class="nav-wrapper">
+        <ul class="nav">
+            <% for (name in theme.menu) { %>
+            <li class="menu-item <%= 
+                (name.toLowerCase() === 'about' && path === 'index.html') ? 'active' : 
+                (name.toLowerCase() === 'writing' && path.startsWith('post')) ? 'active' :
+                path.startsWith(name.toLowerCase()) ? 'active' : '' 
+            %>">
+                <a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</div>
+
+<!-- 添加固定导航栏 -->
+<div class="fixed-nav">
+    <ul class="nav">
+        <% for (name in theme.menu) { %>
+        <li class="menu-item <%= 
+            (name.toLowerCase() === 'about' && path === 'index.html') ? 'active' : 
+            (name.toLowerCase() === 'writing' && path.startsWith('post')) ? 'active' :
+            path.startsWith(name.toLowerCase()) ? 'active' : '' 
+        %>">
+            <a href="<%- url_for(theme.menu[name]) %>"><%= name %></a>
+        </li>
+        <% } %>
+    </ul>
+</div>

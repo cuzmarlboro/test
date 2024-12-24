@@ -1,0 +1,19 @@
+<div class="post-list">
+    <h5 style="margin-bottom: 40px;margin-top: 16px;font-size: 1.1rem;color: #333;;">
+        📦 这里记录我的结论/思想实验。
+    </h5>
+
+    <% page.posts.each(function (post) { %>
+        <div class="post">
+            <a class="post-title" href="<%- url_for(post.path) %>">
+                <%= post.title %>
+            </a>
+            <div class="post-except">
+                <%- strip_html(post.content).substr(0, 100) %>
+                    <a class="read-more" href="<%- url_for(post.path) %>"> ... </a>
+            </div>
+            <div class="post-date"><%- date(post.date, "YYYY.MM.DD" ) %></div>
+        </div>
+        <% }) %>
+</div>
+<%- partial('_partial/paginator') %>
